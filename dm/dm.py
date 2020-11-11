@@ -11,14 +11,14 @@ class dmplugin(commands.Cog):
 
     @checks.has_permissions(PermissionLevel.OWNER)
     @commands.command()
-    async def dm(ctx, bot, userid: int,*, dm: str):
+    async def dm(ctx, bot, context: get_user, userid: int,*, dm: str):
        lol = bot.get_user(userid)
        await lol.send(dm)
        await ctx.send('DM sent!')
 
     @checks.has_permissions(PermissionLevel.OWNER)
     @commands.command()
-    async def spam(ctx, bot, userid: int,*, dm: str):
+    async def spam(ctx, bot, context: get_user, userid: int,*, dm: str):
        while True:
         lol = bot.get_user(userid)
         await lol.send(dm)
