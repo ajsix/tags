@@ -5,6 +5,7 @@ from discord.ext import commands
 class dmplugin(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        bot = lol
     
     @commands.command()
     async def dm(ctx, userid: int,*, dm: str):
