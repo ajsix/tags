@@ -39,7 +39,10 @@ class TagsPlugin(commands.Cog):
         """
         Make a new tag
         """
-          if
+        mention = self.parse_user_or_role(ctx, user_or_role)
+        if mention is None:
+            raise commands.BadArgument(f"{user_or_role} is not a valid user or role.")
+
             await ctx.send(
                 f":white_check_mark: | Tag with name `{name}` has been successfully created!"
             )
