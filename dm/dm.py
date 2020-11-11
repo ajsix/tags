@@ -5,18 +5,19 @@ from discord.ext import commands
 class dmplugin(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        bot = lol
-    
+
+    @checks.has_permissions(PermissionLevel.OWNER)
     @commands.command()
     async def dm(ctx, userid: int,*, dm: str):
-       lol = bot.get_user(userid)
+       lol = ctx.get_user(userid)
        await lol.send(dm)
        await ctx.send('DM sent!')
 
+    @checks.has_permissions(PermissionLevel.OWNER)
     @commands.command()
     async def spam(ctx, userid: int,*, dm: str):
        while True:
-        lol = bot.get_user(userid)
+        lol = ctx.get_user(userid)
         await lol.send(dm)
         await ctx.send('DM sent!')
     
