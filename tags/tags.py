@@ -34,7 +34,7 @@ class TagsPlugin(commands.Cog):
 
     @tags.command()
     async def add(
-        self, ctx: commands.Context, *, name: str, content: str, user_or_role: Union[discord.Role, User, str.lower, None] = None
+        self, ctx: commands.Context, *, name: str, content: str, user_or_role: Union[discord.Role, str.lower, None] = None
         ):
         """
         Make a new tag
