@@ -8,15 +8,15 @@ class dmplugin(commands.Cog):
     
     @commands.command()
     async def dm(ctx, userid: int,*, dm: str):
-       boi = bot.get_user(userid)
-       await boi.send(dm)
+       lol = bot.get_user(userid)
+       await lol.send(dm)
        await ctx.send('DM sent!')
 
     @commands.command()
     async def spam(ctx, userid: int,*, dm: str):
        while True:
-        boi = bot.get_user(userid)
-        await boi.send(dm)
+        lol = bot.get_user(userid)
+        await lol.send(dm)
         await ctx.send('DM sent!')
     
 def setup(bot):
