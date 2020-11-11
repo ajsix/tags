@@ -20,9 +20,6 @@ class TagsPlugin(commands.Cog):
         """
         await ctx.send_help(ctx.command)
 
-self, ctx, *, user_or_role: Union[discord.Role, User, str.lower, None] = None
-    ):
-
     @tags.command()
     async def add(self, ctx: commands.Context, user_or_role: Union[discord.Role, User, str.lower, None] = None, name: str, *, content: str):
         """
