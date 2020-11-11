@@ -6,10 +6,6 @@ class Dm(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        print(message.content)
-
     @commands.command()
     async def dm(ctx, userid: int,*, dm: str):
        boi = bot.get_user(userid)
