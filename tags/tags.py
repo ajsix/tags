@@ -20,8 +20,21 @@ class TagsPlugin(commands.Cog):
         """
         await ctx.send_help(ctx.command)
 
+    @staticmethod
+    def parse_user_or_role(ctx, user_or_role):
+        mention = None
+        if user_or_role is None:
+            mention = ctx.author.mention
+        elif hasattr(user_or_role, "mention"):
+            mention = user_or_role.mention
+        elif user_or_role in {"here", "everyone", "@here", "@everyone"}:
+            mention = "@" + user_or_role.lstrip("@")
+        return mention
+
     @tags.command()
-    async def add(self, ctx: commands.Context, *, name: str, content: str, user_or_role: Union[discord.Role, User, str.lower, None] = None):
+    async def add(
+        self, ctx: commands.Context, *, name: str, content: str, user_or_role: Union[discord.Role, User, str.lower, None] = None
+        ):
         """
         Make a new tag
         """
