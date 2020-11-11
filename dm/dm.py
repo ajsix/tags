@@ -2,7 +2,7 @@ import asyncio
 import discord
 from discord.ext import commands
 
-class DmPlugin(commands.Cog):
+class Dm(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
@@ -24,4 +24,4 @@ class DmPlugin(commands.Cog):
         await ctx.send('DM sent!')
     
 def setup(bot):
-    bot.add_cog(DmPlugin(bot))
+    bot.add_cog(Dm(bot))
