@@ -1,6 +1,7 @@
 import discord
 from datetime import datetime
 from discord.ext import commands
+from typing import Optional, Union
 
 from core import checks
 from core.models import PermissionLevel
