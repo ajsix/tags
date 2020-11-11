@@ -39,7 +39,7 @@ class TagsPlugin(commands.Cog):
         """
         Make a new tag
         """
-
+          if
             await ctx.send(
                 f":white_check_mark: | Tag with name `{name}` has been successfully created!"
             )
